@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 18 Birthday</title>
+
+    <link rel="stylesheet" href="./happy_birthday.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Just+Another+Hand&family=Ma+Shan+Zheng&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div id="pageTransition" class="page-overlay"></div>
+
+    <div class="welcome" id="welcomeBox">
+        <button id="clickBtn" class="clickme">Click Me 🧸</button>
+    </div>
+
+    <div class="hanging-photos-container hidden" id="hangPhoto">
+        <!-- Photo 1 (Left side) -->
+        <div class="photo-card" style="left: 7%; --string-len: 460px; --angle: 0deg;">
+            <div class="photo-card-inner-card card-lavender">
+                <img class="photo-image" src="./images/lavender.jpeg" alt="Memory 1">
+                <div class="textBox">
+                    <p class="head">May calm and beauty bloom wherever your path leads.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo 1 (Left side) -->
+        <div class="photo-card" style="left: 15%; --string-len: 40px; --angle: 0deg;">
+            <div class="photo-card-inner-card card-lunar">
+                <img class="photo-image" src="./images/lunar.jpeg" alt="Memory 1">
+                <div class="textBox">
+                    <p class="head">Even in the quietest nights, your light shines brightly.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo 2 (Right side) -->
+        <div class="photo-card" style="right: 25%; --string-len: 390px; --angle: 0deg;">
+            <div class="photo-card-inner-card card-tulip">
+                <img class="photo-image" src="./images/tulip.jpeg" alt="Memory 2">
+                <div class="textBox">
+                    <p class="head">May this new chapter bring vibrant joy and beautiful fresh beginnings.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="photo-card" style="right: 10%; --string-len: 200px; --angle: 0deg;">
+            <div class="photo-card-inner-card card-cotton">
+                <img class="photo-image" src="./images/cottton-candy.jpeg" alt="Memory 2">
+                <div class="textBox">
+                    <p class="head">Your days will be filled with gentle color and peace.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-card hidden" id="heroCard">
+        <h1 class="heroTitle">Happy 20th Birthday</h1>
+        <h2 class="hero-SubTitle">
+            My Dear
+        </h2>
+        <span>Kant Kaw</span>
+    </div>
+
+    <div class="presentBox hidden" id="presentBox">
+        <h1 class="btnText">For you</h1>
+        <button id="giftBtn"><img class="gift-box" src="./images/giftbox.png" alt="gift-box"></button>
+    </div>
+
+
+    <div class="message-card hidden" id="messageCard">
+        <h2 class="hero-SubTitle">
+            Happy 20th Birthday
+        </h2>
+
+        <p class="message-para">
+            From this moment to forever, May you be happy. <br>
+            May fortune finds you everytime.
+        </p>
+
+        <p class="message-para">It took time to understand it. <br>
+            It took time to realize that not everything that breaks is meant to be fixed. <br>
+            Some things are just meant to be felt, <br>
+            remembered, <br>
+            and then softly set down.
+        </p>
+
+        <p class="message-para">I don't carry anger. <br>
+            I don't look back with regret. <br>
+            When the dust settled, <br>
+            the pain faded, <br>
+            and only gratitude remained.
+        </p>
+
+        <p class="message-para">Grateful that for a moment, <br>
+            someone stepped into my quiet world and stayed a while. <br>
+            Grateful that you taught me how to trust, <br>
+            how to share the thoughts I keep locked away, <br>
+            and how to let someone truly see me.
+        </p>
+
+        <p class="message-para">Even though our paths divided, <br>
+            the good parts of what we built still matter. <br>
+            They helped shape who I am today. <br>
+            A little wiser. <br>
+            A little more patient. <br>
+            Still quiet, <br>
+            but no longer feeling quite as distant.
+        </p>
+
+        <p class="message-para">I don't expect things to go back to how they were. <br>
+            I don't need answers or promises. <br>
+            I just genuinely want the very best for you.
+        </p>
+
+        <p class="message-para">I hope life is gentle with you. <br>
+            I hope you are surrounding yourself with people who make you laugh, <br>
+            people who listen when you speak, <br>
+            and people who value the person you are.
+        </p>
+
+        <p class="message-para">I hope your goals are coming together, <br>
+            line by line, <br>
+            just the way you always envisioned.
+        </p>
+
+        <p class="message-para">Today is a reminder of the day you came into this world. <br>
+            And even from a distance, <br>
+            in my own quiet way, <br>
+            I wanted to send a piece of kindness back to you.
+        </p>
+
+        <p class="message-para">Happy Birthday. </p>
+
+        <p class="message-para">I hope this year brings you genuine peace, <br>
+            endless joy, <br>
+            and all the light you deserve.
+        </p>
+
+        <p class="message-para">Thank you for being an important part of my story. <br>
+            I will always root for your happiness, <br>
+            wherever life takes you. </p>
+        </p>
+
+        <button id="resetBtn" class="reset-btn">✨ Read Again</button>
+    </div>
+
+    <div class="hanging-photos-container hidden" id="hangPhoto-her">
+        <!-- Photo 1 (20.2.2023) -->
+        <div class="photo-card" style="left: 7%; --string-len: 460px; --angle: 0deg;">
+            <div class="photo-card-inner">
+                <div class="photo-card-front photo-frame">
+                    <img src="./images/KantKaw-1.png" alt="Memory 1">
+                </div>
+                <div class="photo-card-back photo-frame">
+                    <p class="photo-back-text">20.2.2023 (Monday) <br>
+                                                The last day I could see your smile.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo 2 (20.2.2023) -->
+        <div class="photo-card" style="left: 15%; --string-len: 40px; --angle: -2deg;">
+            <div class="photo-card-inner">
+                <div class="photo-card-front photo-frame">
+                    <img src="./images/KantKaw-2.png" alt="Memory 2">
+                </div>
+                <div class="photo-card-back photo-frame">
+                    <p class="photo-back-text">20.2.2023 (Monday) <br>
+                                                Those smiles which I can never forget.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo 3 (7.2.2023) -->
+        <div class="photo-card" style="right: 27%; --string-len: 370px; --angle: -2deg;">
+            <div class="photo-card-inner">
+                <div class="photo-card-front photo-frame">
+                    <img src="./images/KantKaw-3.png" alt="Memory 3">
+                </div>
+                <div class="photo-card-back photo-frame">
+                    <p class="photo-back-text">7.2.2023 (Tuesday) <br>
+                                                The last day you were beside me.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo 4 (7.2.2023) -->
+        <div class="photo-card" style="right: 17%; --string-len: 100px; --angle: 0deg;">
+            <div class="photo-card-inner">
+                <div class="photo-card-front photo-frame">
+                    <img src="./images/KantKaw-4.png" alt="Memory 4">
+                </div>
+                <div class="photo-card-back photo-frame">
+                    <p class="photo-back-text">7.2.2023 (Tuesday) <br>
+                                                The last Tuesday that lived in my heart.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo 5 (7.2.2023) -->
+        <div class="photo-card" style="right: 6%; --string-len: 550px; --angle: 0deg;">
+            <div class="photo-card-inner">
+                <div class="photo-card-front photo-frame">
+                    <img src="./images/KantKaw4k.png" alt="Memory 5">
+                </div>
+                <div class="photo-card-back photo-frame">
+                    <p class="photo-back-text">7.2.2023 (Tuesday) <br>
+                                                The last day I could freely talk with you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <audio id="bgMusic" loop src="./audio/first-love.mp3"></audio>
+
+    <!-- Floating Audio Toggle Button -->
+    <button id="musicToggle" class="music-toggle-btn" aria-label="Toggle Music">
+        <span id="musicIcon">🎵</span>
+    </button>
+
+
+    <script src="./happy_birthday.js"></script>
+</body>
+
+</html>

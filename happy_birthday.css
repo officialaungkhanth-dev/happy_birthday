@@ -1,0 +1,757 @@
+html {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+body {
+  background-image: linear-gradient(#FFE2E2, rgba(100, 148, 237, 0.393)),
+    url('./images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: safe center;
+  gap: 1rem;
+  position: relative;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+/* --- Page-to-Page Smooth Transition Overlay --- */
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  /* Match your page background color */
+  z-index: 99999;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.page-overlay.fade-out {
+  opacity: 0;
+}
+
+/* --- Element Transition on Gift Button Click --- */
+#presentBox,
+#heroCard,
+#hangPhoto {
+  transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+}
+
+.transition-fade-out {
+  opacity: 0 !important;
+  transform: translateY(-15px) scale(0.96) !important;
+  filter: blur(4px) !important;
+}
+
+.transition-fade-in {
+  animation: smoothUnveil 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes smoothUnveil {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+    filter: blur(6px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.presentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  line-height: 20px;
+  padding: 4px 18px 28px 18px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 28px;
+  background: linear-gradient(135deg, #d5cfcf, rgba(100, 148, 237, 0.393));
+
+}
+
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 50%;
+}
+
+
+
+button {
+  border: 2px solid #ffe2e297;
+  border-radius: 28px;
+  padding: 0;
+  box-shadow: 0 10px 30px rgba(176, 145, 145, 0.05),
+    0 0 25px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clickme {
+  height: 150px;
+  width: 75%;
+  color: #8967ae;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid #cfcdcde3;
+  border-radius: 25px;
+  padding: 14px 32px;
+  box-shadow: 0 8px 25px rgba(90, 62, 109, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.clickme:hover {
+  /* background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);; */
+  background: linear-gradient(to right, #C6EBFB, #F8C8DC);
+  color: #fff5fc;
+  /* transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2); */
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(90, 62, 109, 0.18),
+    0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+
+.presentBox button:hover {
+  background: linear-gradient(135deg, #FFE2E2, rgba(100, 148, 237, 0.393));
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+}
+
+.gift-box {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.btnText {
+  font-family: 'Just Another Hand', cursive;
+  color: #3A2E4C;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
+  font-size: 2.5rem;
+  font-weight: 900;
+  word-spacing: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hero-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.heroTitle {
+  font-family: 'Playfair Display', serif;
+  color: #3A2E4C;
+  /* Deep midnight plum (softer than black, high contrast) */
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.hero-SubTitle {
+  color: #726084;
+  /* Soft dusty lavender */
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+span {
+  background: linear-gradient(135deg, #9C5279 0%, #5A3E6D 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: none;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  font-family: 'Just Another Hand', cursive;
+  text-align: center;
+  font-size: 3.2rem;
+}
+
+
+.message-card {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  height: auto;
+  animation: fadeIn 0.6s ease forwards;
+  padding: 3rem 1rem;
+}
+
+.message-para {
+  font-family: "Inter", sans-serif;
+  color: #3A2E4C;
+  /* Deep midnight plum (softer than black, high contrast) */
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
+  text-align: start;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reset-btn {
+  display: block;
+  margin: 30px auto 10px auto;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid #5A3E6D;
+  border-radius: 10px;
+  font-family: 'Just Another Hand', cursive;
+  color: #3A2E4C;
+  word-spacing: 6px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.reset-btn:hover {
+  background: #5A3E6D;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(224, 187, 228, 0.35);
+}
+
+.photo-card,
+.photo-card-inner,
+.photo-card-front,
+.photo-card-back,
+.photo-frame {
+  box-sizing: border-box;
+}
+
+.hanging-photos-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.photo-card {
+  position: absolute;
+  top: 0;
+  width: 210px;
+  /* Matches total frame width */
+  padding-top: var(--string-len, 80px);
+  transform-origin: top center;
+  perspective: 1000px;
+  pointer-events: auto;
+  cursor: pointer;
+  animation:
+    dropIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+    continuousSway 3.5s ease-in-out infinite alternate 1.2s;
+}
+
+/* Initial drop into position */
+@keyframes dropIn {
+  0% {
+    transform: translateY(-120%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(var(--angle, 0deg));
+  }
+}
+
+/* Infinite gentle swaying back and forth */
+@keyframes continuousSway {
+  0% {
+    transform: rotate(calc(var(--angle, 0deg) - 2.5deg)) translateY(0px);
+  }
+
+  100% {
+    transform: rotate(calc(var(--angle, 0deg) + 2.5deg)) translateY(3px);
+  }
+}
+
+/* Hanging string extending from top of page */
+.photo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: var(--string-len, 80px);
+  background-color: #8f85a3;
+  /* Matches the pastel aesthetic */
+  transform: translateX(-50%);
+}
+
+/* Clip/Pin at the top of string (Optional visual touch) */
+.photo-card::after {
+  content: '';
+  position: absolute;
+  top: var(--string-len, 80px);
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #d8b4fe;
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.photo-card-inner {
+  position: relative;
+  width: 210px;
+  height: 285px;
+  /* Matches total polaroid height (image + padding) */
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+  transform: rotate(var(--angle, 0deg));
+  /* Applies tilt angle here */
+}
+
+.photo-card-inner.flipped {
+  transform: rotate(var(--angle, 0deg)) rotateY(180deg);
+}
+
+/* .photo-card:hover .photo-card-inner {
+  transform: rotate(var(--angle, 0deg)) rotateY(180deg);
+} */
+
+.photo-card-front,
+.photo-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* Hides reverse side when flipped */
+}
+
+.photo-card-front {
+  z-index: 2;
+}
+
+.photo-card-front::after {
+  content: "Flip Me !!!!";
+  position: absolute;
+  bottom: 8px;
+  right: 70px;
+  font-family: 'Just Another Hand', cursive;
+  font-size: 1.1rem;
+  color: #8A7B9D;
+  opacity: 1;
+}
+
+.photo-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.photo-back-text {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 1.8rem;
+  color: #5A3E6D;
+  margin: 0;
+}
+
+/* Polaroid Photo Card */
+.photo-frame {
+  background: linear-gradient(135deg, #FFF5EE 0%, #FFDFE5 100%);
+  border: 1px solid #D1D5DB;
+  padding: 10px 10px 35px 10px;
+  border-radius: 7px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.photo-frame:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.photo-frame img {
+  width: 190px;
+  height: 240px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 2px;
+  display: block;
+  overflow: hidden;
+}
+
+/* Uiverse Card Container */
+.photo-card-inner-card {
+  width: 200px;
+  height: 270px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(90, 62, 109, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: rotate(var(--angle, 0deg));
+}
+
+/* 1. INITIAL STATE: Small floating image in the center */
+.photo-image {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+/* Text Overlay */
+.photo-card-inner-card .textBox {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 14, 30, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  gap: 6px;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+  padding: 24px 20px;
+  /* Gives the text room to breathe */
+  box-sizing: border-box;
+  border: none;
+  /* Removes inner box outline */
+  border-radius: 20px;
+}
+
+.photo-card-inner-card .textBox .head {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 1.5rem;
+  /* Slightly reduced to allow 2-3 wider lines */
+  line-height: 1.4;
+  /* Increases vertical line spacing */
+  letter-spacing: 0.6px;
+  /* Opens up letter spacing */
+  color: #FFFFFF;
+  text-align: center;
+  width: 100%;
+  max-width: 130px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75),
+    0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 2. HOVER STATE: Image expands and blurs */
+.photo-card-inner-card:hover>.textBox {
+  opacity: 1;
+  background: rgba(25, 18, 38, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 85%;
+  box-sizing: border-box;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.photo-card-inner-card:hover>.img {
+  height: 70%;
+  max-width: 90%;
+  filter: blur(5px) brightness(0.85);
+  animation: cardFloat 3s infinite ease-in-out;
+}
+
+@keyframes cardFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.photo-card-inner-card:hover {
+  transform: rotate(var(--angle, 0deg)) scale(1.04);
+  box-shadow: 0 15px 35px rgba(90, 62, 109, 0.22);
+}
+
+.photo-card-inner.card .textBox .head {
+  color: var(--head-color, #3A2E4C);
+}
+
+
+
+/* Page load drop & subtle pendulum swing effect */
+@keyframes dropAndSwing {
+  0% {
+    transform: translateY(-120%) rotate(0deg);
+  }
+
+  60% {
+    transform: translateY(0) rotate(calc(var(--angle, 0deg) * -1));
+  }
+
+  80% {
+    transform: translateY(0) rotate(calc(var(--angle, 0deg) * 0.8));
+  }
+
+  100% {
+    transform: translateY(0) rotate(var(--angle, 0deg));
+  }
+}
+
+.music-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(216, 180, 254, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 226, 226, 0.9);
+}
+
+/* Gentle pulse effect while music is playing */
+.music-toggle-btn.playing {
+  animation: musicPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes musicPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(216, 180, 254, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 0 12px rgba(216, 180, 254, 0);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3.2rem;
+  }
+
+  span {
+    font-size: 2.7rem;
+  }
+
+  .photo-card {
+    transform: scale(0.85);
+  }
+}
+
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE FIXES (ALL CARDS VISIBLE)
+   ========================================================================== */
+
+/* --- TABLETS & SMALL SCREENS (<= 768px) --- */
+@media screen and (max-width: 768px) {
+  /* Hero Stage */
+  .hero-card {
+    height: auto;
+    margin-top: 130px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem !important;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .hero-SubTitle {
+    font-size: 1.1rem;
+    margin-top: 6px;
+  }
+
+  .clickme {
+    width: 100%;
+  }
+
+  span {
+    font-size: 2rem !important;
+  }
+
+  /* Stage 2: Nature Cards (#hangPhoto - 4 Cards) */
+  #hangPhoto .photo-card {
+    --string-len: 20px !important;
+  }
+
+  #hangPhoto .photo-card-inner-card {
+    transform: scale(0.55) !important;
+    transform-origin: top center;
+  }
+
+  #hangPhoto .photo-card:nth-child(1) { left: -25px !important; --string-len: 15px !important; }
+  #hangPhoto .photo-card:nth-child(2) { left: 18% !important; --string-len: 60px !important; }
+  #hangPhoto .photo-card:nth-child(3) { right: 18% !important; --string-len: 60px !important; }
+  #hangPhoto .photo-card:nth-child(4) { right: -25px !important; --string-len: 15px !important; }
+
+  /* Stage 3: Her Photos (#hangPhoto-her - 5 Cards) & Message */
+  .message-card {
+    padding-top: 190px !important;
+    align-items: start;
+  }
+
+  .message-para {
+    text-align: start;
+  }
+
+  #hangPhoto-her .photo-card {
+    --string-len: 20px !important;
+  }
+
+  #hangPhoto-her .photo-card-inner {
+    transform: scale(0.52) !important;
+    transform-origin: top center;
+  }
+
+  #hangPhoto-her .photo-card:nth-child(1) { left: -35px !important; --string-len: 15px !important; }
+  #hangPhoto-her .photo-card:nth-child(2) { left: 10% !important; --string-len: 55px !important; }
+  #hangPhoto-her .photo-card:nth-child(3) { 
+    left: 50% !important; 
+    transform: translateX(-50%) !important; 
+    --string-len: 15px !important; 
+  }
+  #hangPhoto-her .photo-card:nth-child(4) { right: 10% !important; --string-len: 55px !important; }
+  #hangPhoto-her .photo-card:nth-child(5) { right: -35px !important; --string-len: 15px !important; }
+}
+
+/* --- MOBILE PHONES (<= 480px) --- */
+@media screen and (max-width: 480px) {
+  /* Hero Stage */
+  .heroTitle {
+    font-size: 1.55rem !important;
+  }
+
+  .hero-card {
+    margin-top: 110px;
+  }
+
+  /* Stage 2: Nature Cards (#hangPhoto - 4 Cards) */
+  #hangPhoto .photo-card-inner-card {
+    transform: scale(0.44) !important;
+    transform-origin: top center;
+  }
+
+  #hangPhoto .photo-card:nth-child(1) { left: -32px !important; --string-len: 10px !important; }
+  #hangPhoto .photo-card:nth-child(2) { left: 14% !important; --string-len: 50px !important; }
+  #hangPhoto .photo-card:nth-child(3) { right: 14% !important; --string-len: 50px !important; }
+  #hangPhoto .photo-card:nth-child(4) { right: -32px !important; --string-len: 10px !important; }
+
+  /* Stage 3: Her Photos (#hangPhoto-her - 5 Cards) & Message */
+  .message-card {
+    padding-top: 150px !important;
+  }
+
+  #hangPhoto-her .photo-card-inner {
+    transform: scale(0.40) !important;
+    transform-origin: top center;
+  }
+
+  #hangPhoto-her .photo-card:nth-child(1) { left: -42px !important; --string-len: 10px !important; }
+  #hangPhoto-her .photo-card:nth-child(2) { left: 6% !important; --string-len: 42px !important; }
+  #hangPhoto-her .photo-card:nth-child(3) { 
+    left: 50% !important; 
+    transform: translateX(-50%) !important; 
+    --string-len: 10px !important; 
+  }
+  #hangPhoto-her .photo-card:nth-child(4) { right: 6% !important; --string-len: 42px !important; }
+  #hangPhoto-her .photo-card:nth-child(5) { right: -42px !important; --string-len: 10px !important; }
+}
