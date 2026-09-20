@@ -722,7 +722,7 @@ span {
   #hangPhoto-her .photo-card:nth-child(1) { left: -42px !important; --string-len: 15px !important; }
   #hangPhoto-her .photo-card:nth-child(2) { left: 10% !important; --string-len: 55px !important; }
   #hangPhoto-her .photo-card:nth-child(3) { 
-    left: 50% !important; 
+    right: 2% !important; 
     transform: translateX(-50%) !important; 
     --string-len: 15px !important; 
   }
@@ -765,7 +765,7 @@ span {
   #hangPhoto-her .photo-card:nth-child(1) { left: -42px !important; --string-len: 10px !important; }
   #hangPhoto-her .photo-card:nth-child(2) { left: 6% !important; --string-len: 42px !important; }
   #hangPhoto-her .photo-card:nth-child(3) { 
-    left: 50% !important; 
+    right: 2% !important; 
     transform: translateX(-50%) !important; 
     --string-len: 10px !important; 
   }
