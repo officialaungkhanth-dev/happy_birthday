@@ -719,11 +719,11 @@ span {
     transform-origin: top center;
   }
 
-  #hangPhoto-her .photo-card:nth-child(1) { left: calc(5% - 105px) !important; right: auto !important; --string-len: 15px !important; }
+  #hangPhoto-her .photo-card:nth-child(1) { left: calc(10% - 105px) !important; right: auto !important; --string-len: 15px !important; }
   #hangPhoto-her .photo-card:nth-child(2) { left: calc(27.5% - 105px) !important; right: auto !important; --string-len: 55px !important; }
   #hangPhoto-her .photo-card:nth-child(3) { left: calc(50% - 105px) !important; right: auto !important; --string-len: 15px !important; }
   #hangPhoto-her .photo-card:nth-child(4) { left: calc(72.5% - 105px) !important; right: auto !important; --string-len: 55px !important; }
-  #hangPhoto-her .photo-card:nth-child(5) { left: calc(95% - 105px) !important; right: auto !important; --string-len: 15px !important; }
+  #hangPhoto-her .photo-card:nth-child(5) { left: calc(90% - 105px) !important; right: auto !important; --string-len: 15px !important; }
 }
 
 /* --- MOBILE PHONES (<= 480px) --- */
@@ -758,9 +758,9 @@ span {
     transform-origin: top center;
   }
 
-  #hangPhoto-her .photo-card:nth-child(1) { left: calc(4% - 105px) !important; right: auto !important; --string-len: 10px !important; }
+  #hangPhoto-her .photo-card:nth-child(1) { left: calc(10% - 105px) !important; right: auto !important; --string-len: 10px !important; }
   #hangPhoto-her .photo-card:nth-child(2) { left: calc(27% - 105px) !important; right: auto !important; --string-len: 42px !important; }
   #hangPhoto-her .photo-card:nth-child(3) { left: calc(50% - 105px) !important; right: auto !important; --string-len: 10px !important; }
   #hangPhoto-her .photo-card:nth-child(4) { left: calc(73% - 105px) !important; right: auto !important; --string-len: 42px !important; }
-  #hangPhoto-her .photo-card:nth-child(5) { left: calc(96% - 105px) !important; right: auto !important; --string-len: 10px !important; }
+  #hangPhoto-her .photo-card:nth-child(5) { left: calc(90% - 105px) !important; right: auto !important; --string-len: 10px !important; }
 }
