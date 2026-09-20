@@ -641,6 +641,13 @@ span {
 
 /* --- TABLETS & SMALL SCREENS (<= 768px) --- */
 @media screen and (max-width: 768px) {
+
+  body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
   /* Hero Stage */
   .hero-card {
     height: auto;
@@ -715,6 +722,13 @@ span {
 
 /* --- MOBILE PHONES (<= 480px) --- */
 @media screen and (max-width: 480px) {
+
+  body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
   /* Hero Stage */
   .heroTitle {
     font-size: 1.55rem !important;
