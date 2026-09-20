@@ -5,13 +5,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(#FFE2E2, rgba(100, 148, 237, 0.393)),
-    url('./images/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
+  min-height: 100dvh;
   height: auto;
   margin: 0;
   padding: 3rem 1rem;
@@ -25,13 +19,29 @@ body {
   overflow-x: hidden;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#FFE2E2, rgba(100, 148, 237, 0.393)),
+    url('./images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* --- Page-to-Page Smooth Transition Overlay --- */
 .page-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: #fff;
   /* Match your page background color */
   z-index: 99999;
@@ -647,7 +657,7 @@ span {
     background-position: center;
     background-repeat: no-repeat;
   }
-  
+
   /* Hero Stage */
   .hero-card {
     height: auto;
@@ -709,7 +719,7 @@ span {
     transform-origin: top center;
   }
 
-  #hangPhoto-her .photo-card:nth-child(1) { left: -35px !important; --string-len: 15px !important; }
+  #hangPhoto-her .photo-card:nth-child(1) { left: -42px !important; --string-len: 15px !important; }
   #hangPhoto-her .photo-card:nth-child(2) { left: 10% !important; --string-len: 55px !important; }
   #hangPhoto-her .photo-card:nth-child(3) { 
     left: 50% !important; 
@@ -717,18 +727,11 @@ span {
     --string-len: 15px !important; 
   }
   #hangPhoto-her .photo-card:nth-child(4) { right: 10% !important; --string-len: 55px !important; }
-  #hangPhoto-her .photo-card:nth-child(5) { right: -35px !important; --string-len: 15px !important; }
+  #hangPhoto-her .photo-card:nth-child(5) { right: -42px !important; --string-len: 15px !important; }
 }
 
 /* --- MOBILE PHONES (<= 480px) --- */
 @media screen and (max-width: 480px) {
-
-  body {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
   /* Hero Stage */
   .heroTitle {
     font-size: 1.55rem !important;
