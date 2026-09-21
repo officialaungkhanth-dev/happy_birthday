@@ -19,26 +19,48 @@ function clearTransitions(element) {
     }
 }
 
-// Photo flip card interaction
-document.querySelectorAll('.photo-card').forEach(card => {
-    let flipTimer = null;
+// Photo card interaction (Auto-resets both nature cards and photo flips after 5 seconds)
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.photo-card').forEach(card => {
+        let activeTimer = null;
 
-    card.addEventListener('click', () => {
-        const innerCard = card.querySelector('.photo-card-inner');
-        if (!innerCard) return;
+        card.addEventListener('click', (e) => {
+            // Clear any existing active timer when tapped again
+            if (activeTimer) {
+                clearTimeout(activeTimer);
+                activeTimer = null;
+            }
 
-        const isFlipped = innerCard.classList.toggle('flipped');
+            // 1. Nature Cards (.photo-card-inner-card)
+            const natureCard = card.querySelector('.photo-card-inner-card');
+            if (natureCard) {
+                const isActive = natureCard.classList.toggle('touch-active');
 
-        if (flipTimer) {
-            clearTimeout(flipTimer);
-            flipTimer = null;
-        }
+                // Reset back to original state after 5 seconds (5000ms)
+                if (isActive) {
+                    activeTimer = setTimeout(() => {
+                        natureCard.classList.remove('touch-active');
+                        if (document.activeElement) {
+                            document.activeElement.blur(); // Remove mobile touch focus
+                        }
+                    }, 5000);
+                }
+                return;
+            }
 
-        if (isFlipped) {
-            flipTimer = setTimeout(() => {
-                innerCard.classList.remove('flipped');
-            }, 5000);
-        }
+            // 2. Her Photos (.photo-card-inner)
+            const innerCard = card.querySelector('.photo-card-inner');
+            if (!innerCard) return;
+
+            const isFlipped = innerCard.classList.toggle('flipped');
+
+            // Reset back to unflipped state after 5 seconds
+            if (isFlipped) {
+                activeTimer = setTimeout(() => {
+                    innerCard.classList.remove('flipped');
+                }, 5000);
+            }
+        });
     });
 });
 
@@ -188,28 +210,28 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const herPhotos = [
-        { 
-            src: "./images/KantKaw-1.png", 
+        {
+            src: "./images/KantKaw-1.png",
             position: "top center",
             text: "20.2.2023 (Monday) <br> The last day I could see your smile."
         },
-        { 
-            src: "./images/KantKaw-2.png", 
+        {
+            src: "./images/KantKaw-2.png",
             position: "top center",
             text: "20.2.2023 (Monday) <br> Those smiles which I can never forget."
         },
-        { 
-            src: "./images/KantKaw-3.png", 
+        {
+            src: "./images/KantKaw-3.png",
             position: "top center",
             text: "7.2.2023 (Tuesday) <br> The last day you were beside me."
         },
-        { 
-            src: "./images/KantKaw-4.png", 
+        {
+            src: "./images/KantKaw-4.png",
             position: "0% 20%",
             text: "7.2.2023 (Tuesday) <br> The last Tuesday that lived in my heart."
         },
-        { 
-            src: "./images/KantKaw4k.png", 
+        {
+            src: "./images/KantKaw4k.png",
             position: "50% 20%",
             text: "7.2.2023 (Tuesday) <br> The last day I could freely talk with you."
         }
