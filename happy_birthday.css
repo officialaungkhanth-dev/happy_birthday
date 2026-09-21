@@ -724,9 +724,9 @@ span {
   }
 
   #hangPhoto .photo-card:nth-child(1) { left: -25px !important; --string-len: 15px !important; }
-  #hangPhoto .photo-card:nth-child(2) { left: 18% !important; --string-len: 60px !important; }
-  #hangPhoto .photo-card:nth-child(3) { right: 18% !important; --string-len: 60px !important; }
-  #hangPhoto .photo-card:nth-child(4) { right: -25px !important; --string-len: 15px !important; }
+  #hangPhoto .photo-card:nth-child(2) { left: 18% !important; --string-len: 150px !important; }
+  #hangPhoto .photo-card:nth-child(3) { right: 18% !important; --string-len: 50px !important; }
+  #hangPhoto .photo-card:nth-child(4) { right: -25px !important; --string-len: 110px !important; }
 
   /* Stage 3: Her Photos (#hangPhoto-her - 5 Cards) & Message */
   .message-card {
@@ -769,10 +769,10 @@ span {
     transform-origin: top center;
   }
 
-  #hangPhoto .photo-card:nth-child(1) { left: -32px !important; --string-len: 10px !important; }
+  #hangPhoto .photo-card:nth-child(1) { left: -32px !important; --string-len: 15px !important; }
   #hangPhoto .photo-card:nth-child(2) { left: 28px !important; --string-len: 150px !important; }
   #hangPhoto .photo-card:nth-child(3) { right:56px !important; --string-len: 50px !important; }
-  #hangPhoto .photo-card:nth-child(4) { right: -40px !important; --string-len: 25px !important; }
+  #hangPhoto .photo-card:nth-child(4) { right: -40px !important; --string-len: 110px !important; }
 
   /* Stage 3: Her Photos (#hangPhoto-her - 5 Cards) & Message */
   .message-card {
